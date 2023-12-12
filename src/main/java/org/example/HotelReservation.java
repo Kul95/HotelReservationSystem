@@ -12,19 +12,20 @@ public class HotelReservation {
         System.out.println("Welcome to hotel reservation system");
         HotelReservation hotelReservation = new HotelReservation();
 
-        Hotel hotel1 = new Hotel("Lakewood", 3);
-        Hotel hotel2 = new Hotel("Bridgewood", 4);
-        Hotel hotel3 = new Hotel("Ridgewood", 5);
+        Hotel hotel1 = new Hotel("Lakewood", 110,90);
+        Hotel hotel2 = new Hotel("Bridgewood", 160,80);
+        Hotel hotel3 = new Hotel("Ridgewood", 220,150);
 
         //   Adding the Hotels to Hotel Reservation Class
         list.add(hotel1);
         list.add(hotel2);
         list.add(hotel3);
         System.out.println(list);
+        findCheapestHotel();
 
     }
 
-    public void findCheapestHotel() {
+    public static void findCheapestHotel() {
 
         LocalDate date = LocalDate.of(2020, Month.SEPTEMBER, 10);
         LocalDate date1 = LocalDate.of(2020, Month.SEPTEMBER, 11);
