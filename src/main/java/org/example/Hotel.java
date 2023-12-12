@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Hotel {
     String hotelName;
-   int hotelWeekDayRegularCustomer;
+    int hotelWeekDayRegularCustomer;
 
     public Hotel(String hotelName, int hotelWeekDayRegularCustomer) {
         this.hotelName = hotelName;
@@ -33,5 +33,13 @@ public class Hotel {
                 "hotelName='" + hotelName + '\'' +
                 ", hotelWeekDayRegularCustomer=" + hotelWeekDayRegularCustomer +
                 '}';
+    }
+
+    public int rateCalculation(String day) {
+        if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
+            return hotelWeekDayRegularCustomer;
+        } else {
+            return 0;
+        }
     }
 }
