@@ -5,10 +5,12 @@ import java.util.List;
 public class Hotel {
     String hotelName;
     int hotelWeekDayRegularCustomer;
+    int hotelWeekendRegularCustomer;
 
-    public Hotel(String hotelName, int hotelWeekDayRegularCustomer) {
+    public Hotel(String hotelName, int hotelWeekDayRegularCustomer, int hotelWeekendRegularCustomer) {
         this.hotelName = hotelName;
         this.hotelWeekDayRegularCustomer = hotelWeekDayRegularCustomer;
+        this.hotelWeekendRegularCustomer = hotelWeekendRegularCustomer;
     }
 
     public String getHotelName() {
@@ -27,11 +29,20 @@ public class Hotel {
         this.hotelWeekDayRegularCustomer = hotelWeekDayRegularCustomer;
     }
 
+    public int getHotelWeekendRegularCustomer() {
+        return hotelWeekendRegularCustomer;
+    }
+
+    public void setHotelWeekendRegularCustomer(int hotelWeekendRegularCustomer) {
+        this.hotelWeekendRegularCustomer = hotelWeekendRegularCustomer;
+    }
+
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
                 ", hotelWeekDayRegularCustomer=" + hotelWeekDayRegularCustomer +
+                ", hotelWeekendRegularCustomer=" + hotelWeekendRegularCustomer +
                 '}';
     }
 
