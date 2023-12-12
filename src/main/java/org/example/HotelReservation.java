@@ -12,9 +12,9 @@ public class HotelReservation {
         System.out.println("Welcome to hotel reservation system");
         HotelReservation hotelReservation = new HotelReservation();
 
-        Hotel hotel1 = new Hotel("Lakewood", 110,90);
-        Hotel hotel2 = new Hotel("Bridgewood", 160,80);
-        Hotel hotel3 = new Hotel("Ridgewood", 220,150);
+        Hotel hotel1 = new Hotel("Lakewood", 110,90,3);
+        Hotel hotel2 = new Hotel("Bridgewood", 160,80,4);
+        Hotel hotel3 = new Hotel("Ridgewood", 220,150,5);
 
         //   Adding the Hotels to Hotel Reservation Class
         list.add(hotel1);
