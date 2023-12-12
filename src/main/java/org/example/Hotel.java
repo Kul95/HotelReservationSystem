@@ -48,9 +48,9 @@ public class Hotel {
 
     public int rateCalculation(String day) {
         if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
-            return hotelWeekDayRegularCustomer;
+            return getHotelWeekDayRegularCustomer();
         } else {
-            return 0;
+            return getHotelWeekendRegularCustomer();
         }
     }
 }
