@@ -8,13 +8,14 @@ import java.util.List;
 
 public class HotelReservation {
     static List<Hotel> list = new ArrayList<>();
+
     public static void main(String[] args) {
         System.out.println("Welcome to hotel reservation system");
         HotelReservation hotelReservation = new HotelReservation();
 
-        Hotel hotel1 = new Hotel("Lakewood", 110,90,3);
-        Hotel hotel2 = new Hotel("Bridgewood", 160,80,4);
-        Hotel hotel3 = new Hotel("Ridgewood", 220,150,5);
+        Hotel hotel1 = new Hotel("Lakewood", 110, 90, 3);
+        Hotel hotel2 = new Hotel("Bridgewood", 160, 80, 4);
+        Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5);
 
         //   Adding the Hotels to Hotel Reservation Class
         list.add(hotel1);
@@ -23,6 +24,7 @@ public class HotelReservation {
         System.out.println(list);
         findCheapestHotel();
         cheapestBestRatedHotel();
+        BestRatedHotel();
 
     }
 
@@ -56,14 +58,27 @@ public class HotelReservation {
         }
     }
 
-    public static void cheapestBestRatedHotel(){
-        int rating=Integer.MAX_VALUE;
-        for (Hotel hotel:list){
-            if (hotel.getRating()<rating){
-                rating=hotel.getRating();
+    public static void cheapestBestRatedHotel() {
+        int rating = Integer.MAX_VALUE;
+        for (Hotel hotel : list) {
+            if (hotel.getRating() < rating) {
+                rating = hotel.getRating();
             }
         }
-        int bestRating=rating;
-        list.stream().filter(i->i.getRating()==bestRating).forEach(System.out::println);
+        int bestRating = rating;
+        list.stream().filter(i -> i.getRating() == bestRating).forEach(System.out::println);
     }
-}
+        public static void BestRatedHotel() {
+            int rating1 = list.get(0).getRating();
+            int rating2 = list.get(1).getRating();
+            int rating3 = list.get(2).getRating();
+            if (rating1 > rating2 && rating1 > rating3) {
+                System.out.println("Best Rated Hotel is " + rating1);
+            } else if (rating2 > rating1 && rating2 > rating3) {
+                System.out.println("Best Rated Hotel is " + rating2);
+            } else {
+                System.out.println("Best Rated Hotel is " + rating3);
+
+            }
+        }
+    }
