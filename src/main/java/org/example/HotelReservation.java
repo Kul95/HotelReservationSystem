@@ -22,13 +22,14 @@ public class HotelReservation {
         list.add(hotel3);
         System.out.println(list);
         findCheapestHotel();
+        cheapestBestRatedHotel();
 
     }
 
     public static void findCheapestHotel() {
 
-        LocalDate date = LocalDate.of(2020, Month.SEPTEMBER, 10);
-        LocalDate date1 = LocalDate.of(2020, Month.SEPTEMBER, 11);
+        LocalDate date = LocalDate.of(2020, Month.SEPTEMBER, 11);
+        LocalDate date1 = LocalDate.of(2020, Month.SEPTEMBER, 12);
         DayOfWeek localDate1 = date.getDayOfWeek();
         DayOfWeek localDate2 = date1.getDayOfWeek();
         String day1 = String.valueOf(localDate1);
@@ -53,5 +54,16 @@ public class HotelReservation {
             System.out.println("Cheapest Rates For The Hotel :- " + sum3 + "$");
 
         }
+    }
+
+    public static void cheapestBestRatedHotel(){
+        int rating=Integer.MAX_VALUE;
+        for (Hotel hotel:list){
+            if (hotel.getRating()<rating){
+                rating=hotel.getRating();
+            }
+        }
+        int bestRating=rating;
+        list.stream().filter(i->i.getRating()==bestRating).forEach(System.out::println);
     }
 }
